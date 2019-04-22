@@ -8,12 +8,12 @@ export default {
     
     // source
     sourceWatchInterval: 800,
-    sourceGlob: '**/*.js',
+    sourceGlob: '**/*.@(js|json)',
 
     // response 应答
     response: {
         timeout: 150,   // 默认响应时间 150毫秒
-        maxTimeout: 10*1000,
+        maxTimeout: 10*1000,  // 最大响应时间
     },
 
 }

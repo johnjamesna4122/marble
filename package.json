@@ -1,5 +1,5 @@
 {
-  "name": "@gaoyonggege/marble",
+  "name": "gaoyonggege-marble",
   "version": "0.1.0",
   "description": "前端接口数据模拟",
   "main": "src/index.ts",
@@ -42,6 +42,7 @@
     "@types/glob": "^7.1.1",
     "@types/gulp": "^4.0.6",
     "@types/koa": "^2.0.48",
+    "@types/node": "^11.13.6",
     "@types/yargs": "^13.0.0",
     "typescript": "^3.4.3"
   }

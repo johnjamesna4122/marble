@@ -1,0 +1,13 @@
+{
+    "/z": {
+        "method": "get",
+        "timeout": 100,
+        "data": {
+            "code": 0,
+            "msg": "",
+            "data": {
+                "list": []
+            }
+        }
+    }
+}
