@@ -36,7 +36,7 @@ module.exports = {
         hook: (req, res, ctx) => {
             return new Promise( (resolve, reject) => {
                 setTimeout( () => {
-                    resolve('5秒后');
+                    resolve('5秒后.::gggg fdffd');
                 }, 5000)
             } );
         }

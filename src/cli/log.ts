@@ -30,3 +30,15 @@ export function logWarning (msg: string) {
     console.log(chalk.red(msg));
 }
 
+/**
+ * 产生一个新行
+ * @param n 
+ */
+export function newLines (n?: number) {
+    if ( n && n > 0 && n < 10 ) {
+        return console.log('\n'.repeat(n));
+    }
+
+    return console.log('\n');
+}
+
