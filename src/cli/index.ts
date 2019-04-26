@@ -3,7 +3,10 @@
 /**
 *  cli入口
 */
+/// <reference types="node" />
+
 import * as path from 'path';
+import { directoryExistsSync } from './utils';
 import config from './config';
 import code from './code';
 import { throwError, logInfo, logWarning } from './log';
@@ -33,6 +36,9 @@ function validateParams (port: string|number, dir: string): any {
         return throwError(code['12']);
     }
     let dirAbsPath = path.join(process.cwd(), dir);
+    if ( !directoryExistsSync(dirAbsPath) ) {
+        return throwError(code['13'](dir));
+    }
 
     return true;
 }

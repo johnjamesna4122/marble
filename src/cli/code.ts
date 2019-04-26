@@ -8,6 +8,7 @@ export default {
 
     11: `系统错误，dir参数为空`,
     12: `命令行参数dir不能试图指定为上级目录`,
+    13: (dir: string) => { return `指定的目录${dir}不存在!`;},
 
     21: (dir: string) => { return `目录${dir}下没有合法的数据文件`; },
     22: (file: string) => { return `数据文件${file}内容错误`; },
