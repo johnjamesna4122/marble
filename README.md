@@ -12,7 +12,7 @@
 ## cli installation
 
 ```
-npm install --save-dev gaoyonggege-marble
+npm install --save-dev marblejs
 
 ```
 
