@@ -1,6 +1,6 @@
 {
-  "name": "gaoyonggege-marble",
-  "version": "0.3.0",
+  "name": "marblejs",
+  "version": "0.1.0",
   "description": "前端接口数据模拟",
   "main": "src/index.ts",
   "bin": {
