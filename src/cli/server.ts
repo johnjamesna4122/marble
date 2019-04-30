@@ -49,32 +49,26 @@ export class Server {
      */
     watchSource(dir: string): void {
         gulp.watch(config.sourceGlob, {interval: config.sourceWatchInterval}, async (event) => {
-            try {
-                newLines();
-                this.logRloadStart();
-
+            newLines();
+            console.group(chalk.green('marble热加载第') + chalk.yellow(''+this.reloads)+chalk.green('次'));
+            this.logRloadTime('开始');
+            try {        
                 await this.reloadDatas(dir);
-
-                this.logRloadEnd();
-
-                this.reloads++;
+                this.logRloadTime('结束');
+                console.groupEnd();
             } catch (e) {
-                logWarning(`marble热加载第${this.reloads}次失败`);
-            }
+                logWarning(`marble热加载失败`);
+                console.groupEnd();
+            }    
+
+            this.reloads++;
+            
         })
     }
 
-    logRloadStart () {
-        let str = chalk.green('marble热加载第') + chalk.yellow(''+this.reloads) + 
-                        chalk.green('次开始，时间: ') + 
-                            chalk.yellow(''+moment().format('YYYY-MM-DD, hh:mm:ss a'));
-        console.log(str);
-    }
-
-    logRloadEnd () {
-        let str = chalk.green('marble热加载第') + chalk.yellow(''+this.reloads) + 
-                        chalk.green('次结束，时间: ') + 
-                            chalk.yellow(''+moment().format('YYYY-MM-DD, hh:mm:ss a'));
+    logRloadTime (tag: string = '') {
+        let str = chalk.green(`${tag}时间: `) + 
+                        chalk.yellow(''+moment().format('YYYY-MM-DD, hh:mm:ss a'));
         console.log(str);
     }
 
